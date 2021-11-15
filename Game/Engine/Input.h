@@ -50,6 +50,7 @@ private:
 	inline KEY_STATE GetState(KEY_TYPE key) { return _states[static_cast<uint8>(key)]; }
 
 private:
-	HWND				_hwnd;
-	vector<KEY_STATE>	_states;
+	HWND _hwnd;
+	vector<KEY_STATE> _states;
 };
+

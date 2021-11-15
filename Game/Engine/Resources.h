@@ -12,19 +12,19 @@ class Resources
 
 public:
 	template<typename T>
-	shared_ptr<T>		Load(const wstring& key, const wstring& path);
+	shared_ptr<T> Load(const wstring& key, const wstring& path);
 
 	template<typename T>
-	bool				Add(const wstring& key, shared_ptr<T> object);
+	bool Add(const wstring& key, shared_ptr<T> object);
 
 	template<typename T>
-	shared_ptr<T>		Get(const wstring& Key);
+	shared_ptr<T> Get(const wstring& Key);
 
 	template<typename T>
-	OBJECT_TYPE			GetObjectType();
+	OBJECT_TYPE GetObjectType();
 
-	shared_ptr<Mesh>	LoadCubeMesh();
-	shared_ptr<Mesh>	LoadSphereMesh();
+	shared_ptr<Mesh> LoadCubeMesh();
+	shared_ptr<Mesh> LoadSphereMesh();
 
 private:
 	using KeyObjMap = std::map<wstring/*key*/, shared_ptr<Object>>;

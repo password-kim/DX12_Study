@@ -14,4 +14,3 @@ void Game::Update()
 {
 	GEngine->Update();
 }
-

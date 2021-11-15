@@ -9,8 +9,8 @@ public:
 	void Init();
 	void Update();
 
-	uint32	GetFps() { return _fps; }
-	float	GetDeltaTime() { return _deltaTime; }
+	uint32 GetFps() { return _fps; }
+	float GetDeltaTime() { return _deltaTime; }
 
 private:
 	uint64	_frequency = 0;
@@ -22,5 +22,4 @@ private:
 	float	_frameTime = 0.f;
 	uint32	_fps = 0;
 };
-
 

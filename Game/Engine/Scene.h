@@ -12,9 +12,14 @@ public:
 	void LateUpdate();
 	void FinalUpdate();
 
+	void Render();
+private:
+	void PushLightData();
+
+public:
 	void AddGameObject(shared_ptr<GameObject> gameObject);
 	void RemoveGameObject(shared_ptr<GameObject> gameObject);
-	
+
 	const vector<shared_ptr<GameObject>>& GetGameObjects() { return _gameObjects; }
 
 private:

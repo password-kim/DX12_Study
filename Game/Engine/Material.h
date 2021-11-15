@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Object.h"
 
 class Shader;
@@ -14,11 +13,11 @@ enum
 
 struct MaterialParams
 {
-	void SetInt(uint8 index, int32 value)	{ intParams[index] = value; }
+	void SetInt(uint8 index, int32 value) { intParams[index] = value; }
 	void SetFloat(uint8 index, float value) { floatParams[index] = value; }
 
-	array<int32, MATERIAL_INT_COUNT>	intParams;
-	array<float, MATERIAL_FLOAT_COUNT>	floatParams;
+	array<int32, MATERIAL_INT_COUNT> intParams;
+	array<float, MATERIAL_FLOAT_COUNT> floatParams;
 };
 
 class Material : public Object
@@ -37,7 +36,8 @@ public:
 	void PushData();
 
 private:
-	shared_ptr<Shader>									_shader;
-	MaterialParams										_params;
-	array<shared_ptr<Texture>, MATERIAL_TEXTURE_COUNT>	_textures;
+	shared_ptr<Shader>	_shader;
+	MaterialParams		_params;
+	array<shared_ptr<Texture>, MATERIAL_TEXTURE_COUNT> _textures;
 };
+

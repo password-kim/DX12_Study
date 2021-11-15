@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Object.h"
 
 // [일감 기술서] 외주 인력들이 뭘 해야할지 기술
@@ -25,3 +24,4 @@ private:
 	ComPtr<ID3D12PipelineState>			_pipelineState;
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC  _pipelineDesc = {};
 };
+

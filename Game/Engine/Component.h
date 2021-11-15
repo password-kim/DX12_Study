@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Object.h"
 
 enum class COMPONENT_TYPE : uint8
@@ -7,6 +6,7 @@ enum class COMPONENT_TYPE : uint8
 	TRANSFORM,
 	MESH_RENDERER,
 	CAMERA,
+	LIGHT,
 	// ...
 	MONO_BEHAVIOUR,
 	END,
@@ -27,24 +27,25 @@ public:
 	virtual ~Component();
 
 public:
-	virtual void Awake() {}
-	virtual void Start() {}
-	virtual void Update() {}
-	virtual void LateUpdate() {}
-	virtual void FinalUpdate() {}
+	virtual void Awake() { }
+	virtual void Start() { }
+	virtual void Update() { }
+	virtual void LateUpdate() { }
+	virtual void FinalUpdate() { }
 
 public:
-	COMPONENT_TYPE		GetType() { return _type; }
-	bool				IsValid() { return _gameObject.expired() == false; }
+	COMPONENT_TYPE GetType() { return _type; }
+	bool IsValid() { return _gameObject.expired() == false; }
 
-	shared_ptr<GameObject>	GetGameObject();
-	shared_ptr<Transform>	GetTransform();
+	shared_ptr<GameObject> GetGameObject();
+	shared_ptr<Transform> GetTransform();
 
 private:
 	friend class GameObject;
 	void SetGameObject(shared_ptr<GameObject> gameObject) { _gameObject = gameObject; }
 
 protected:
-	COMPONENT_TYPE			_type;
-	weak_ptr<GameObject>	_gameObject;
+	COMPONENT_TYPE _type;
+	weak_ptr<GameObject> _gameObject;
 };
+

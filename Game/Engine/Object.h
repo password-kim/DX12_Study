@@ -24,20 +24,20 @@ public:
 	Object(OBJECT_TYPE type);
 	virtual ~Object();
 
-	OBJECT_TYPE		GetType() { return _objectType; }
+	OBJECT_TYPE GetType() { return _objectType; }
 
-	void			SetName(const wstring& name) { _name = name; }
-	const wstring&	GetName() { return _name; }
+	void SetName(const wstring& name) { _name = name; }
+	const wstring& GetName() { return _name; }
 
 	// TODO : Instantiate
 
 protected:
 	friend class Resources;
-	virtual void Load(const wstring& path) {}
-	virtual void Save(const wstring& path) {}
+	virtual void Load(const wstring& path) { }
+	virtual void Save(const wstring& path) { }
 
 protected:
-	OBJECT_TYPE		_objectType = OBJECT_TYPE::NONE;
-	wstring			_name;
+	OBJECT_TYPE _objectType = OBJECT_TYPE::NONE;
+	wstring _name;
 };
 
