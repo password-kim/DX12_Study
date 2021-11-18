@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "Frustum.h"
 
 enum class PROJECTION_TYPE
 {
@@ -19,13 +20,15 @@ public:
 private:
 	PROJECTION_TYPE _type = PROJECTION_TYPE::PERSPECTIVE;
 
-	float _near = 1.f;
-	float _far = 1000.f;
-	float _fov = XM_PI / 4.f;
-	float _scale = 1.f;
+	float			_near = 1.f;
+	float			_far = 1000.f;
+	float			_fov = XM_PI / 4.f;
+	float			_scale = 1.f;
 
-	Matrix _matView = {};
-	Matrix _matProjection = {};
+	Matrix			_matView = {};
+	Matrix			_matProjection = {};
+
+	Frustum			_frustum;
 
 public:
 	// TEMP
