@@ -41,6 +41,5 @@ private:
 
 	bool _checkFrustum = true;
 	uint8 _layerIndex = 0;
-
 };
 
